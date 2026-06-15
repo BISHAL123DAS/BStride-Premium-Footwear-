@@ -31,4 +31,9 @@ app.use("/api/orders",   orderRoutes);
 
 app.use("/api/products", productRouter);
 
+app.get("/", (req, res) => {
+    res.send("Backend is running");
+  });
+  
+
 module.exports = app;
