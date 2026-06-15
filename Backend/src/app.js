@@ -14,7 +14,7 @@ app.use(cors({
 }));
 
 const allowedOrigins = [
-    "https://bstride-premium-footware.netlify.app",
+    "https://bstride-premium-footware.netlify.app/",
     "http://localhost:5173"
 ];
 
