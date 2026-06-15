@@ -25,7 +25,7 @@ const connectToDB = require("./src/config/database");
 
 require('dotenv').config();
 
+// Connect to DB immediately
 connectToDB();
 
-// ✅ Export for Vercel (serverless - no app.listen)
 module.exports = app;

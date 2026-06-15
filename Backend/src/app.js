@@ -23,6 +23,14 @@ app.use(cors({
     credentials: true
 }));
 
+const connectToDB = require('./config/database');
+
+// Ensure DB connected on every request
+app.use(async (req, res, next) => {
+    await connectToDB();
+    next();
+});
+
 // for Login and Register
 const authRouter = require('./routes/auth');
 app.use('/api/auth', authRouter);
