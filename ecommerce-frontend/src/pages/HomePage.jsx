@@ -98,17 +98,30 @@ const HomePage = () => {
     <div className="min-h-screen bg-zinc-950">
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="border-b border-zinc-800">
+      <section className="border-b border-zinc-800 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-            {/* LEFT */}
-            <div>
-              <div className="inline-flex items-center px-4 py-2 rounded-full border border-lime-400/20 bg-lime-400/10 text-lime-400 text-xs sm:text-sm font-medium mb-6">
+            {/* LEFT — text content with mobile bg image */}
+            <div className="relative">
+
+              {/* ── Mobile only: shoe as faded background ── */}
+              <div className="absolute inset-0 flex justify-end items-center lg:hidden pointer-events-none select-none">
+                <img
+                  src={shoesImg}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-[190px] sm:w-[230px] opacity-[0.12] blur-[2px] translate-x-4"
+                />
+              </div>
+
+              {/* Badge */}
+              <div className="relative z-10 inline-flex items-center px-4 py-2 rounded-full border border-lime-400/20 bg-lime-400/10 text-lime-400 text-xs sm:text-sm font-medium mb-6">
                 New Season Collection 2026
               </div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.95]">
+              {/* Heading */}
+              <h1 className="relative z-10 text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.95]">
                 Discover
                 <br />
                 Premium
@@ -116,13 +129,15 @@ const HomePage = () => {
                 <span className="text-lime-400">Streetwear</span>
               </h1>
 
-              <p className="mt-6 text-zinc-400 text-base sm:text-lg leading-relaxed max-w-xl">
+              {/* Description */}
+              <p className="relative z-10 mt-6 text-zinc-400 text-base sm:text-lg leading-relaxed max-w-xl">
                 Shop the latest sneakers, apparel, and accessories from the
                 world's leading brands. Built for comfort, performance, and
                 everyday confidence.
               </p>
 
-              <div className="flex gap-3 sm:gap-4 mt-8">
+              {/* Buttons */}
+              <div className="relative z-10 flex gap-3 sm:gap-4 mt-8">
                 <button className="px-6 sm:px-8 py-3 sm:py-4 bg-lime-400 text-black font-bold rounded-xl hover:scale-105 transition text-sm sm:text-base">
                   Shop Now
                 </button>
@@ -131,8 +146,8 @@ const HomePage = () => {
                 </button>
               </div>
 
-              {/* SEARCH */}
-              <div className="mt-8 max-w-lg relative">
+              {/* Search */}
+              <div className="relative z-10 mt-8 max-w-lg relative">
                 <svg
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none"
                   width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -147,29 +162,28 @@ const HomePage = () => {
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search shoes, apparel, brands..."
                   className="
-                    w-full bg-zinc-900 border border-zinc-700 text-white
+                    w-full bg-zinc-900/80 backdrop-blur border border-zinc-700 text-white
                     rounded-xl pl-11 pr-5 py-3 sm:py-4 outline-none text-sm sm:text-base
                     focus:border-lime-400 transition placeholder:text-zinc-600
                   "
                 />
               </div>
 
-              {/* STATS ── react-countup */}
-              <div className="flex gap-8 sm:gap-12 mt-10">
-                <StatItem end={500} suffix="+" label="Products" />
-                <StatItem end={50} suffix="+" label="Brands" />
-                <StatItem end={10000} suffix="+" label="Customers" />
+              {/* Stats */}
+              <div className="relative z-10 flex gap-8 sm:gap-12 mt-10">
+                <StatItem end={500}   suffix="+"  label="Products"  />
+                <StatItem end={50}    suffix="+"  label="Brands"    />
+                <StatItem end={10000} suffix="+"  label="Customers" />
               </div>
             </div>
 
-            {/* RIGHT */}
-            {/* RIGHT */}
-            <div className="relative flex justify-center items-center mt-8 lg:mt-0">
-              <div className="absolute w-[280px] h-[320px] sm:w-[350px] sm:h-[420px] lg:w-[450px] lg:h-[550px] bg-lime-400/20 blur-[140px] rounded-full" />
+            {/* RIGHT — Desktop only full image */}
+            <div className="relative hidden lg:flex justify-center items-center">
+              <div className="absolute w-[450px] h-[550px] bg-lime-400/20 blur-[140px] rounded-full" />
               <img
                 src={shoesImg}
                 alt="Sneaker"
-                className="relative z-10 w-[260px] sm:w-[340px] lg:w-full lg:max-w-xl rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
+                className="relative z-10 w-full max-w-xl rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
               />
             </div>
 
