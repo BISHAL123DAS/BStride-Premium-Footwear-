@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <Link to="/" className="font-black text-xl tracking-tight text-lime-400 font-display">
-          ⬡ STRIDE
+          ⬡ BSTRIDE
         </Link>
 
         {/* Links */}

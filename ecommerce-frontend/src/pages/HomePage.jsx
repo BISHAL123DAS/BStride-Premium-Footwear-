@@ -35,24 +35,24 @@ const CATEGORY_ICONS = {
   ),
   Shoes: (
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 18h1.4c.3 0 .6-.2.8-.5l1.7-3.2A2 2 0 0 1 7.6 13h5.5c.8 0 1.5.4 1.9 1l1.4 2.1A2 2 0 0 0 18 17h3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2v-1Z"/>
+      <path d="M2 18h1.4c.3 0 .6-.2.8-.5l1.7-3.2A2 2 0 0 1 7.6 13h5.5c.8 0 1.5.4 1.9 1l1.4 2.1A2 2 0 0 0 18 17h3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2v-1Z" />
       <path d="M7.6 13 6 7H4" />
     </svg>
   ),
   Slippers: (
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 16s1-1 4-1 6 2 8 2 4-1 4-1v-5s-1 1-4 1-6-2-8-2-4 1-4 1Z"/>
+      <path d="M4 16s1-1 4-1 6 2 8 2 4-1 4-1v-5s-1 1-4 1-6-2-8-2-4 1-4 1Z" />
       <path d="M4 16v3" /><path d="M20 16v3" />
     </svg>
   ),
   Apparel: (
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/>
+      <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" />
     </svg>
   ),
   Accessories: (
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
       <line x1="3" x2="21" y1="6" y2="6" />
       <path d="M16 10a4 4 0 0 1-8 0" />
     </svg>
@@ -156,19 +156,20 @@ const HomePage = () => {
 
               {/* STATS ── react-countup */}
               <div className="flex gap-8 sm:gap-12 mt-10">
-                <StatItem end={500}   suffix="+"  label="Products"  />
-                <StatItem end={50}    suffix="+"  label="Brands"    />
-                <StatItem end={10000} suffix="+"  label="Customers" />
+                <StatItem end={500} suffix="+" label="Products" />
+                <StatItem end={50} suffix="+" label="Brands" />
+                <StatItem end={10000} suffix="+" label="Customers" />
               </div>
             </div>
 
             {/* RIGHT */}
-            <div className="relative hidden lg:flex justify-center items-center">
-              <div className="absolute w-[450px] h-[550px] bg-lime-400/20 blur-[140px] rounded-full" />
+            {/* RIGHT */}
+            <div className="relative flex justify-center items-center mt-8 lg:mt-0">
+              <div className="absolute w-[280px] h-[320px] sm:w-[350px] sm:h-[420px] lg:w-[450px] lg:h-[550px] bg-lime-400/20 blur-[140px] rounded-full" />
               <img
                 src={shoesImg}
                 alt="Sneaker"
-                className="relative z-10 w-full max-w-xl rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
+                className="relative z-10 w-[260px] sm:w-[340px] lg:w-full lg:max-w-xl rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
               />
             </div>
 
@@ -219,8 +220,8 @@ const HomePage = () => {
                   {cat === "All"
                     ? products.length
                     : products.filter(
-                        (p) => p.category.toLowerCase() === cat.toLowerCase()
-                      ).length}
+                      (p) => p.category.toLowerCase() === cat.toLowerCase()
+                    ).length}
                 </span>
               </button>
             );
