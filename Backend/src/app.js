@@ -13,6 +13,11 @@ app.use(cors({
     credentials: true
 }));
 
+app.use(cors({
+    origin: "https://bstride-premium-footware.netlify.app",
+    credentials: true
+}));
+
 // for Login and Register
 const authRouter = require('./routes/auth');
 app.use('/api/auth', authRouter);
